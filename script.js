@@ -11,21 +11,21 @@ window.onload = function () {
   
     buttonStart.onclick = function() {
       
-      clearInterval(Interval);
+       clearInterval(Interval);
        Interval = setInterval(startTimer, 10);
     }
     
-      buttonStop.onclick = function() {
-         clearInterval(Interval);
+        buttonStop.onclick = function() {
+        clearInterval(Interval);
     }
     
   
     buttonReset.onclick = function() {
        clearInterval(Interval);
-      tens = "00";
-        seconds = "00";
-      appendTens.innerHTML = tens;
-        appendSeconds.innerHTML = seconds;
+       tens = "00";
+       seconds = "00";
+       appendTens.innerHTML = tens;
+       appendSeconds.innerHTML = seconds;
     }
     
      
