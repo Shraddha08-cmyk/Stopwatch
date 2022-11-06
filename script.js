@@ -1,60 +1,55 @@
-window.onload = function () {
-  
-    var seconds = 00; 
-    var tens = 00; 
-    var appendTens = document.getElementById("tens")
-    var appendSeconds = document.getElementById("seconds")
-    var buttonStart = document.getElementById('button-start');
-    var buttonStop = document.getElementById('button-stop');
-    var buttonReset = document.getElementById('button-reset');
-    var Interval ;
-  
-    buttonStart.onclick = function() {
-      
-       clearInterval(Interval);
-       Interval = setInterval(startTimer, 10);
-    }
+var min =0;
+var sec = 0;
+var tenss =0;
+var timer = false;
+
+
+function start(){
+    timer = true;
+    stopwatch();
     
-        buttonStop.onclick = function() {
-        clearInterval(Interval);
-    }
+}
+
+function stop(){
+    timer=false;
+
+}
+
+function reset(){
+    timer=false;
+
+    min=0;
+    sec=0;
+    tenss=0;
+
+    document.getElementById("minutes").innerHTML = "00";
+    document.getElementById("seconds").innerHTML = "00";
+    document.getElementById("tens").innerHTML = "00";
     
-  
-    buttonReset.onclick = function() {
-       clearInterval(Interval);
-       tens = "00";
-       seconds = "00";
-       appendTens.innerHTML = tens;
-       appendSeconds.innerHTML = seconds;
-    }
     
-     
-    
-    function startTimer () {
-      tens++; 
-      
-      if(tens <= 9){
-        appendTens.innerHTML = "0" + tens;
-      }
-      
-      if (tens > 9){
-        appendTens.innerHTML = tens;
+
+}
+
+function stopwatch(){
+    if(timer==true){
+        tenss = tenss+1;
+
+        if(tenss==100){
+            sec = sec+1;
+            tenss=0;
+        }
+        if(sec==60){
+            min=min+1;
+            sec=0;
+        }
+        document.getElementById("minutes").innerHTML = min;
         
-      } 
-      
-      if (tens > 99) {
-        console.log("seconds");
-        seconds++;
-        appendSeconds.innerHTML = "0" + seconds;
-        tens = 0;
-        appendTens.innerHTML = "0" + 0;
-      }
-      
-      if (seconds > 9){
-        appendSeconds.innerHTML = seconds;
-      }
+        document.getElementById("seconds").innerHTML = sec;
+        
+        document.getElementById("tens").innerHTML = tenss;
+
+        setTimeout("stopwatch()",10);
     
     }
-    
-  
-  }
+
+}

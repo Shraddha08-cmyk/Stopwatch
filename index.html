@@ -13,14 +13,15 @@
             <h2>STOPWATCH</h2>
         </section>
         <section class="timer">
-            <p><span class="minutes">00</span>:<span id="seconds">00</span>:<span id="tens">00</span></p>
+            <p><span class="minutes" id="minutes">00</span>:<span id="seconds">&nbsp; 00</span>:<span id="tens">&nbsp;00</span></p>
         </section>
         <section class="button">
-            <button class="btn" id="button-start">START</button>
-            <button class="btn" id="button-reset">RESET</button>
+            <button class="btn" onclick="start()" id="button-start">START</button>
+            <button class="btn" onclick="reset()" id="button-reset">RESET</button>
         </section>
         <section class="btn2">
-            <button class="btn" id="button-stop">STOP</button>
+            <button class="btn" onclick="stop()" id="button-stop">STOP</button>
+            <!-- <button class="flag" id="flag">FLAG</button> -->
         </section>
     </div>
     <script src="script.js"></script>
